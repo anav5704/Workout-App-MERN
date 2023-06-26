@@ -2,6 +2,7 @@
 require("dotenv").config()
 
 const express = require("express")
+const mongoose = require("mongoose")
 const routes = require("./Routes/workout")
 
 // create express app
@@ -17,10 +18,22 @@ app.use((request, response, next) => {
 // routes
 app.use( "/api/workouts" ,routes)
 
-// listen for requests
-app.listen(process.env.PORT, () => {
-    console.log("listening to port 4000")
-})
+// connect to MongoDB
+
+async function MongoExpressInit() {
+    try {
+        await mongoose.connect(process.env.MONGO)
+        // listen for requests
+        app.listen(process.env.PORT, () => {
+            console.log("Connected to MongoDB && listening to port 4000")
+        })
+    }
+    catch(err) {
+        console.log(err)
+    }
+    
+}
+MongoExpressInit()
 
 // get data from .env
 process.env
