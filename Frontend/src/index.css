@@ -6,7 +6,10 @@
 @layer base {
     body {
         @apply bg-slate-900 text-white
-       
+    }
+
+    form input {
+        @apply bg-slate-800 mt-2 p-2 rounded outline-none caret-teal-600
     }
 }
 
