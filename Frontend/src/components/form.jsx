@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { useWorkoutsContext } from "../assets/hooks/useWorkoutsContext"
 
 function Form() {
+    const {dispatch } =  useWorkoutsContext()
     const [title, setTitle] = useState("")
     const [reps, setReps] = useState("")
     const [load, setLoad] = useState("")
@@ -22,6 +24,7 @@ function Form() {
             setTitle("")
             setReps("")
             setLoad("")
+            dispatch({type: "CREATE_WORKOUT", payload: data})
         }
     
         response.ok ? clear() : console.log(data.error)
