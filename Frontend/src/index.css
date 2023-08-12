@@ -9,7 +9,15 @@
     }
 
     form input {
-        @apply bg-slate-800 mt-2 p-2 rounded outline-none caret-teal-600
+        @apply bg-slate-800 mt-2 p-2 rounded outline-none caret-teal-600 border border-slate-800
+    }
+
+    .warn {
+        @apply bg-slate-800 mt-2 p-2 rounded outline-none caret-teal-600 text-center
+    }
+
+    .red {
+        @apply border border-rose-500
     }
 }
 

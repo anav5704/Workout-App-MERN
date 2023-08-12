@@ -13,11 +13,11 @@ function Home() {
             console.log(workouts)
         }
         fetchWorkouts() 
-    }, [])
+    }, [dispatch])
 
     return(
         <div className="home p-10 grid grid-cols-2 md:grid-cols-4 gap-5">
-            <div className="grid col-span-1 gap-5">
+            <div className="grid grid-cols-3 col-span-3 gap-5">
                 {workouts.map((workout) => (<Workout key={workout._id} workout={workout} />))}
             </div>
             <Form />
