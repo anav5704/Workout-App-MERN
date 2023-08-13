@@ -1,4 +1,4 @@
-import { useWorkoutsContext } from "../assets/hooks/useWorkoutsContext"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 function Workout({workout}){

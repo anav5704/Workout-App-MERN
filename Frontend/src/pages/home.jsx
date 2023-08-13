@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Workout from "../components/workout"
 import Form from "../components/form"
-import { useWorkoutsContext } from "../assets/hooks/useWorkoutsContext"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 
 function Home() {
     const {workouts, dispatch} = useWorkoutsContext()
