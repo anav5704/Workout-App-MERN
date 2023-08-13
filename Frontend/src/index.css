@@ -8,6 +8,10 @@
         @apply bg-slate-900 text-white
     }
 
+    .pages {
+        @apply h-screen
+    }
+
     form input {
         @apply bg-slate-800 mt-2 p-2 rounded outline-none caret-teal-600 border border-slate-800
     }
