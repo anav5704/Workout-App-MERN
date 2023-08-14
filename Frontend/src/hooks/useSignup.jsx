@@ -21,7 +21,7 @@ export const useSignup = () => {
             if(!response.ok){
                 setLoading(false)
                 setError(json.error)
-                console.log (json.error)
+                console.log (json.Error)
             }
             if(response.ok){
                 setLoading(false)

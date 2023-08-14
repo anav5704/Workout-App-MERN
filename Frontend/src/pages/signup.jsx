@@ -9,6 +9,7 @@ function Signup(){
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
+            console.log(email, password)
             await signup(email, password)
         }
         catch(err){
