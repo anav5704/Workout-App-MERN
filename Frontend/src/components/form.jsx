@@ -7,7 +7,7 @@ function Form() {
     const [reps, setReps] = useState("")
     const [load, setLoad] = useState("")
     const [error, setError] = useState(false)
-    const[empty, setEmpty] = useState([])
+    const [empty, setEmpty] = useState([])
 
     async function createNew (e) {
         e.preventDefault()

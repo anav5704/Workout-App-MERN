@@ -6,18 +6,23 @@ function Signup(){
     const [password, setPassword] = useState("")
     const {signup, error, loading} = useSignup()
     
-    const hanndleSubmit = async(e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-        await signup(email, password)
+        try{
+            await signup(email, password)
+        }
+        catch(err){
+            console.log("Signup Error:", err)
+        }
     }
 
     return (
-        <form action="" onSubmit={hanndleSubmit} className="flex flex-col w-72 mx-auto mt-36">
+        <form action="" onSubmit={handleSubmit} className="flex flex-col w-72 mx-auto mt-36">
             <h1 className="text-center text-2xl">Sign Up</h1>
-            <input placeholder="Email"  type="text" name="" id="" />
-            <input placeholder="Password" onChange={(e) => setEmail(e.target.value)} value={email} type="text" name="" id="" />
-            <button disabled={loading} className="p-2 bg-teal-500 mt-2 rounded text-slate-900" onChange={(e) => setPassword(e.target.value)} value={password} type="submit">Create Account</button>
-            { error ? <div className="warn">{ error }</div> : null }
+            <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} type="text" name="" id="" />
+            <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} type="text" name="" id="" />
+            <button disabled={loading} className="p-2 bg-teal-500 mt-2 rounded text-slate-900" type="submit">Create Account</button>
+            { error ? <div className="warn red">{ error }</div> : null }
         </form>
     )
 }
