@@ -6,7 +6,8 @@ export default defineConfig({
    server:{
     proxy: {
         "/api/workouts" : "http://localhost:4000",     
-        "/api/user/signup" : "http://localhost:4000"  
+        "/api/user/signup" : "http://localhost:4000",
+        "/api/user/login" : "http://localhost:4000"  
       }
    },
   plugins: [react()],

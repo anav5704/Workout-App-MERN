@@ -1,9 +1,11 @@
 import { useLogout } from "../hooks/useLogout"
 import { Link } from "react-router-dom"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 function Nav() {
 
     const { logout }  = useLogout()
+    const { user } = useAuthContext()
     const handleClick = () => {
         logout()
     }
@@ -16,14 +18,15 @@ function Nav() {
                 </Link>
             </div>
 
-        { !localStorage.getItem("user") ? 
+        { !user ? 
             <div className="">
                 <Link to="/login" className="mr-5">Log In</Link>
                 <Link to="/signup" className="bg-teal-400 p-2 rounded-md font-semibold text-slate-800">Sign Up</Link>
             </div>
             :
             <div>
-                <span onClick={handleClick} className="bg-teal-400 p-2 rounded-md font-semibold text-slate-800">Log Out</span>
+                <span className="mr-5">{ user?.email }</span>
+                <span onClick={handleClick} className="cursor-pointer bg-teal-400 p-2 rounded-md font-semibold text-slate-800">Log Out</span>
             </div>
         }
             
