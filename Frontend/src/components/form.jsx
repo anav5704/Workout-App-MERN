@@ -3,7 +3,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 function Form() {
-    const {dispatch } =  useWorkoutsContext()
+    const {dispatch} =  useWorkoutsContext()
     const [title, setTitle] = useState("")
     const [reps, setReps] = useState("")
     const [load, setLoad] = useState("")
