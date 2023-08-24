@@ -18,7 +18,7 @@ async function getOne(request, response){
     try {
         const {id} = await request.params
 
-        if(mongoose.Types.ObjectId.isValid(id)) {
+        if(mongoose.Types.ObjectId.isValid({_id : id})) {
             return response.status(404).json({Error: "Document Does not exits"})
         }
 
@@ -104,4 +104,4 @@ async function update(request, response){
     }
 }
 
-module.exports = {create, getOne, getAll, deleteOne, update, update}
+module.exports = { create, getOne, getAll, deleteOne, update }
