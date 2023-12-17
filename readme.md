@@ -1,4 +1,4 @@
-# Workout App
+# Workout App 💪
 
 ![hero](https://github.com/anav5704/Workout-App-MERN/blob/main/Frontend/docs/workout-mern.png)
 
